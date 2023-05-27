@@ -1,0 +1,123 @@
+.app.dark {
+  .home-page {
+    .home-contianer {
+      background-color: #222222d1;
+
+      .widgets-container {
+        background-color: #222;
+      }
+
+      .chats-container {
+        background-color: #222;
+      }
+
+      .list-container {
+        background-color: #222;
+      }
+    }
+  }
+
+  .list-container {
+    background-color: #222;
+  }
+
+  .new-page-container {
+    background-color: #222;
+    color: white;
+
+    .formInput {
+      color: #ffffffad;
+
+      .input {
+        background-color: #d3c8c8cf;
+      }
+    }
+  }
+
+  .single-page-contianer {
+    background-color: #222;
+
+    .top {
+      color: white;
+    }
+  }
+
+  .login-page {
+    background-color: #222;
+  }
+
+  .sidebar {
+    background-color: #222;
+
+    .logo {
+      color: lightgray;
+    }
+
+    .horizontal-line {
+      height: 0;
+      border: 1px solid lightgrey;
+    }
+
+    .item {
+      .sidebar-icon {
+        color: #ffffffab;
+      }
+    }
+  }
+
+  .navbar {
+    background-color: #222;
+    color: lightgrey;
+
+    .search {
+      background-color: #222;
+      border: 1px solid lightgrey;
+    }
+
+    .item {
+      .navbar-icon {
+        color: #ffffffab;
+      }
+    }
+  }
+
+  .chart {
+    background-color: #222;
+    color: #ffffffab;
+
+    .revenue {
+      color: #ffffffab;
+    }
+  }
+
+  .data-table {
+    background-color: #222;
+
+    .DataGrid {
+      color: #ffffffd4;
+    }
+  }
+
+  .featured-chart {
+    background-color: #222;
+  }
+
+  .table-container {
+    background-color: #222;
+
+    .table-cell {
+      color: #ffffff94;
+    }
+    .cell-content {
+      color: #ffffffcd;
+    }
+
+    .TableCel {
+      color: #ffffffcd;
+    }
+  }
+
+  .widget {
+    background-color: #222;
+  }
+}

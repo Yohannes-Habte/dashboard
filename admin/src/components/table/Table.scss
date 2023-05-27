@@ -1,0 +1,37 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.table-container {
+  .table-cell {
+    font-weight: $aafw;
+  }
+
+  .cell-content {
+    .cell-wrapper {
+        display: flex;
+        align-items: center;
+      .product-image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+    }
+
+    .status {
+        padding: 5px;
+        border-radius: 5px;
+
+        &.Approved {
+            color: $title;
+            background-color: rgb(247, 249, 245);
+        }
+
+        &.Pending {
+            color: red;
+            background-color: #f8f9f6;
+        }
+    }
+  }
+}

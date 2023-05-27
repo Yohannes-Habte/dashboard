@@ -1,0 +1,11 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.chart {
+  flex: 4;
+  @include box;
+
+  .chart-Grid {
+    stroke: rgb(247, 244, 244);
+  }
+}

@@ -1,0 +1,75 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.data-table {
+  width: 100%;
+  padding: 1rem;
+
+  .add-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .data-table-title {
+      @include subTitle;
+    }
+
+    .link {
+      @include button;
+    }
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1.3rem;
+    }
+  }
+
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+    &.active {
+      color: green;
+      background-color: #d6f4f4;
+    }
+
+    &.passive {
+      color: black;
+      background-color: yellow;
+    }
+
+    &.pending {
+      color: #ff0019;
+      background-color: #fcd9f2;
+    }
+  }
+
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .viewButton {
+      padding: 2px 5px;
+      border-radius: $radius;
+      color: $title;
+      border: 1px dotted $hr;
+      cursor: pointer;
+    }
+
+    .deleteButton {
+      padding: 2px 5px;
+      border-radius: $font;
+      color: $font;
+      border: 1px dotted $font;
+      cursor: pointer;
+    }
+  }
+}

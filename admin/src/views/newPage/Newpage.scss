@@ -1,0 +1,80 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.new-page {
+  display: flex;
+  width: 100%;
+
+  .new-page-container {
+    background-color: $main;
+    flex: 5;
+
+    .top-container {
+      @include box;
+
+      .title {
+        color: lightgray;
+        font-size: $afs;
+      }
+    }
+
+    .bottom-container {
+      @include box;
+      display: flex;
+      justify-content: space-between;
+
+      .left-cotainer {
+        flex: 1;
+        text-align: center;
+
+        .image {
+          @include imageSize;
+        }
+      }
+
+      .right-cotainer {
+        flex: 2;
+
+        .form {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 1rem;
+
+          .formInput {
+            width: 40%;
+
+            label {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              .icon {
+                cursor: pointer;
+              }
+            }
+
+            input {
+              width: 100%;
+              padding: 0.2rem;
+              border: none;
+              border-bottom: 1px solid gray;
+            }
+
+            .file-input {
+              display: none;
+            }
+          }
+
+          .btn-container {
+            width: 150px;
+
+            .btn {
+              @include button;
+            }
+          }
+        }
+      }
+    }
+  }
+}
