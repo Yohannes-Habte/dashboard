@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
 import './Sidebar.scss';
 import { MdDashboard, MdSettingsSystemDaydream } from 'react-icons/md';
 import { FaProductHunt, FaShoppingCart } from 'react-icons/fa';
@@ -10,12 +9,14 @@ import { SiLogstash } from 'react-icons/si';
 import { AiFillSetting } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineLogout } from 'react-icons/ai';
-import { DarkContext } from '../../context/backgroundColor/DarkBgProvider';
-import { ACTION } from '../../context/backgroundColor/Reducer';
+import { NavLink } from 'react-router-dom';
+import { BackgroundContext } from '../../context/background/BgProvider';
+import { BACKGROUND_ACTION } from '../../context/background/BgReducer';
 
 const Sidebar = () => {
-  // Global state variable
-  const {dispatch} = useContext(DarkContext);
+  // Global variables
+  const { dispatch } = useContext(BackgroundContext);
+
   return (
     <nav className="sidebar">
       <div className="sidbar-logo">
@@ -29,7 +30,9 @@ const Sidebar = () => {
           <p className="sub-title"> Main </p>
           <li className="item">
             <MdDashboard className="sidebar-icon" />
-            <span className="span-text"> Dashboard</span>
+            <NavLink to={'/'} className="span-text">
+              Dashboard
+            </NavLink>
           </li>
 
           <p className="sub-title"> Lists </p>
@@ -93,16 +96,19 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="color-options">
-        <div
-          className="color-option"
-          onClick={() => dispatch({ type: ACTION.LIGHT })}
-        ></div>
-        <div
-          className="color-option"
-          onClick={() => dispatch({ type: ACTION.DARK })}
-        ></div>
-      </div>
+      <article className='backgroung-color'>
+        <h4 className='bg-title'> Background Color</h4>
+        <div className="color-options">
+          <div
+            className="color-option"
+            onClick={() => dispatch({ type: BACKGROUND_ACTION.LIGHT })}
+          ></div>
+          <div
+            onClick={() => dispatch({ type: BACKGROUND_ACTION.DARK })}
+            className="color-option"
+          ></div>
+        </div>
+      </article>
     </nav>
   );
 };

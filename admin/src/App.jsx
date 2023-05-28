@@ -1,101 +1,38 @@
-import React, { useContext, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './views/homePage/Home';
 import Login from './views/loginPage/Login';
-import Singlepage from './views/singlePage/Singlepage';
-import Newpage from './views/newPage/Newpage';
 import List from './views/listPage/List';
+import Single from './views/singlePage/Single';
+import New from './views/newPage/New';
 import { productInputs, userInputs } from './data/DataFormSource';
-import './styles/BgColor.scss';
-import { DarkContext } from './context/backgroundColor/DarkBgProvider';
-import { UserContext } from './context/UserAuth/UserAuthProvider';
+import { BackgroundContext } from './context/background/BgProvider';
+import "./styles/BgColor.scss";
 
 const App = () => {
-  // Global state variable
-  const { darkMode } = useContext(DarkContext);
-  const { currentUser } = useContext(UserContext)
-
-  // How to protect route or routes
-  const Protected = ({ children }) => {
-    return currentUser ? children : <Navigate to={'/login'} />;
-  };
-
+  // Global variable
+  const {darkMode} = useContext(BackgroundContext);
   return (
-    <div className={darkMode ? 'app dark' : 'app'}>
+    <div className={darkMode? "app dark" : "app"}>
       <Router>
         <Routes>
+          {/* Nested Routes */}
           <Route path="/">
-            {/* //! Nested Routes */}
+            <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
-            <Route
-              index
-              element={
-                <Protected>
-                  <Home />
-                </Protected>
-              }
-            />
 
-            {/* //! User Route */}
+            {/* User Route has further nexted route */}
             <Route path="users">
-              {/* Further Nested Routes */}
-              <Route
-                index
-                element={
-                  <Protected>
-                    <List />
-                  </Protected>
-                }
-              />
-              <Route
-                path=":userId"
-                element={
-                  <Protected>
-                    <Singlepage />
-                  </Protected>
-                }
-              />
-              <Route
-                path="newpage"
-                element={
-                  <Protected>
-                    <Newpage inputs={userInputs} title={'Add New User'} />
-                  </Protected>
-                }
-              />
+              <Route index element={<List />} />
+              <Route path=":userId" element={<Single />} />
+              <Route path="new" element={<New inputs= {userInputs} title="Add New User" />} />
             </Route>
-            {/* //! Product Route */}
+
+            {/* Product Route has further nexted route */}
             <Route path="products">
-              {/* Further Nested Routes */}
-              <Route
-                index
-                element={
-                  <Protected>
-                    <List />
-                  </Protected>
-                }
-              />
-              <Route
-                path=":productId"
-                element={
-                  <Protected>
-                    <Singlepage />
-                  </Protected>
-                }
-              />
-              <Route
-                path="newpage"
-                element={
-                  <Protected>
-                    <Newpage inputs={productInputs} title={'Add New Product'} />
-                  </Protected>
-                }
-              />
+              <Route index element={<List />} />
+              <Route path=":productId" element={<Single />} />
+              <Route path="new" element={<New inputs= {productInputs} title="Add New Product"  />} />
             </Route>
           </Route>
         </Routes>

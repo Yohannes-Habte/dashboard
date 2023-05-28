@@ -1,11 +1,4 @@
 import React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import './Table.scss';
 
 const TableReact = () => {
@@ -61,25 +54,27 @@ const TableReact = () => {
       status: 'Pending',
     },
   ];
+
   return (
-    <TableContainer component={Paper} className="table-container">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell className="table-cell"> Tracking ID </TableCell>
-            <TableCell className="table-cell"> Product </TableCell>
-            <TableCell className="table-cell"> Customer </TableCell>
-            <TableCell className="table-cell"> Date </TableCell>
-            <TableCell className="table-cell"> Amount </TableCell>
-            <TableCell className="table-cell"> Payment </TableCell>
-            <TableCell className="table-cell"> Status </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+    <section className="table-container">
+      <h4 className="table-title">2022 Transactions</h4>
+      <table className="table">
+        <thead className="table-header">
+          <tr className="header-row">
+            <td className="table-cell"> Tracking ID </td>
+            <td className="table-cell"> Product </td>
+            <td className="table-cell"> Customer </td>
+            <td className="table-cell"> Date </td>
+            <td className="table-cell"> Amount </td>
+            <td className="table-cell"> Payment </td>
+            <td className="table-cell"> Status </td>
+          </tr>
+        </thead>
+        <tbody className="table-body">
           {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell className='TableCel'>{row.id}</TableCell>
-              <TableCell className="cell-content">
+            <tr key={row.id}>
+              <td className="cell-content">{row.id}</td>
+              <td className="cell-content">
                 <div className="cell-wrapper">
                   <img
                     src={row.img}
@@ -88,19 +83,19 @@ const TableReact = () => {
                   />
                   {row.product}
                 </div>
-              </TableCell>
-              <TableCell className="cell-content">{row.customer}</TableCell>
-              <TableCell className="cell-content">{row.date}</TableCell>
-              <TableCell className="cell-content">{row.amount}</TableCell>
-              <TableCell className="cell-content">{row.method}</TableCell>
-              <TableCell className="cell-content">
+              </td>
+              <td className="cell-content">{row.customer}</td>
+              <td className="cell-content">{row.date}</td>
+              <td className="cell-content">${row.amount}</td>
+              <td className="cell-content">{row.method}</td>
+              <td className="cell-content">
                 <span className={`status ${row.status}`}> {row.status} </span>
-              </TableCell>
-            </TableRow>
+              </td>
+            </tr>
           ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+        </tbody>
+      </table>
+    </section>
   );
 };
 

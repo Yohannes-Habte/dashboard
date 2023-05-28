@@ -23,12 +23,9 @@
             position: absolute;
             top: 0.2rem;
             right: 0.2rem;
-            border: 1px solid $title;
-            border-radius: $radius;
-            background-color: $editbg;
-            cursor: pointer;
-            padding: $buttonPadding;
-            color: $edit;
+            @include btn2;
+            color: #0000ff;
+            font-weight: $aafw;
 
         }
 

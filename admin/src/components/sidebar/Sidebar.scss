@@ -4,7 +4,7 @@
 .sidebar {
   background-color: $aside;
   flex: 1;
-  border-right: 0.5px solid $hr;
+  border-right: 0.5px solid red;
   min-height: 100vh;
 
   .sidbar-logo {
@@ -43,7 +43,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: $sidebar;
+          background-color: $sidebar;
         }
 
         .sidebar-icon {
@@ -51,24 +51,36 @@
         }
 
         .span-text {
-            font-size: 1rem;
-            font-weight: $afw;
-            color: gray;
+          font-size: 1rem;
+          font-weight: $afw;
+          color: gray;
 
-            &:hover {
-                color: $font;
-            }
+          &:hover {
+            color: $font;
+          }
         }
       }
     }
   }
 
-  .color-options {
-    display: flex;
-    align-items: center;
-    margin: 1rem;
-    gap: 1rem;
-    .color-option{
+  .backgroung-color {
+    padding-left: 1rem;
+    .bg-title {
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      color: gray;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .color-options {
+      display: flex;
+      align-items: center;
+      margin: 1rem;
+      gap: 1rem;
+      .color-option {
         width: 1.5rem;
         height: 1.5rem;
         border-radius: $radius;
@@ -76,12 +88,13 @@
         cursor: pointer;
 
         &:nth-child(1) {
-            background-color: #f0f8ff;
+          background-color: #f0f8ff;
         }
 
         &:nth-child(2) {
-            background-color: 	#000000;
+          background-color: #000000;
         }
+      }
     }
   }
 }

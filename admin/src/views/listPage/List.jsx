@@ -1,8 +1,8 @@
-import React from 'react';
-import Sidebar from '../../components/sidebar/Sidebar';
-import Navbar from '../../components/navbar/Navbar';
+import React from 'react'
 import "./List.scss"
-import DataTable from '../../components/dataTable/DataTable';
+import DataTable from '../../components/tables/dataTable/DataTable'
+import Sidebar from '../../components/sidebar/Sidebar'
+import Navbar from '../../components/navbar/Navbar'
 
 const List = () => {
   return (
@@ -14,7 +14,7 @@ const List = () => {
         <DataTable />
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default List;
+export default List

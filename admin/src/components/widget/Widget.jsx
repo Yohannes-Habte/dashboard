@@ -20,7 +20,7 @@ const Widget = ({ type }) => {
         icon: (
           <IoIosPerson
             className="icon"
-            style={{ color: 'green', backgroundColor: 'pink' }}
+            style={{ color: 'green', backgroundColor: "#E6E6FA" }}
           />
         ),
       };
@@ -33,7 +33,7 @@ const Widget = ({ type }) => {
         icon: (
           <BsCartFill
             className="icon"
-            style={{ color: '#6495ed', backgroundColor: '#ffe4c4' }}
+            style={{ color: '#6495ed', backgroundColor: '#e6e6fa' }}
           />
         ),
       };
@@ -46,7 +46,7 @@ const Widget = ({ type }) => {
         icon: (
           <RiMoneyDollarCircleLine
             className="icon"
-            style={{ color: '#006400', backgroundColor: '#87cefa' }}
+            style={{ color: '#006400', backgroundColor: '#E6E6FA' }}
           />
         ),
       };
@@ -59,7 +59,7 @@ const Widget = ({ type }) => {
         icon: (
           <MdOutlineAccountBalanceWallet
             className="icon"
-            style={{ color: '	#ff00ff', backgroundColor: '#b0c4de' }}
+            style={{ color: '	#ff00ff', backgroundColor: '#e6e6fa' }}
           />
         ),
       };

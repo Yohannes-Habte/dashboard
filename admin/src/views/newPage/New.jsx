@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import './New.scss';
+import { FaCloudUploadAlt } from 'react-icons/fa';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
-import './Newpage.scss';
-import { FaCloudUploadAlt } from 'react-icons/fa';
 
-const Newpage = ({ inputs, title }) => {
-  // Local state variables
+const New = ({ inputs, title }) => {
   const [file, setFile] = useState('');
   console.log(file);
 
@@ -14,11 +13,11 @@ const Newpage = ({ inputs, title }) => {
       <Sidebar />
       <section className="new-page-container">
         <Navbar />
-        <article className="top-container">
-          <h1 className="title"> {title} </h1>
+        <article className="add-user-container">
+          <h3 className="title"> {title} </h3>
         </article>
-        <div className="bottom-container">
-          <div className="left-cotainer">
+        <div className="form-container">
+          <figure className="left-cotainer">
             <img
               src={
                 file
@@ -28,33 +27,37 @@ const Newpage = ({ inputs, title }) => {
               alt=""
               className="image"
             />
-          </div>
+          </figure>
           <div className="right-cotainer">
             <form action="" className="form">
-              <div className="formInput">
-                <label htmlFor="file">
-                  Image: <FaCloudUploadAlt className="icon" />{' '}
-                </label>
+              <div className="file-input-container">
                 <input
                   type="file"
                   name="file"
                   id="file"
                   // upload only one image
                   onChange={(e) => setFile(e.target.files[0])}
-                  className="file-input"
+                  className="file-field"
                 />
+
+                <label htmlFor="file" className="file-label">
+                  Image: <FaCloudUploadAlt className="icon" />{' '}
+                </label>
               </div>
 
               {inputs.map((input) => {
                 return (
-                  <div key={input.id} className="formInput">
-                    <label htmlFor=""> {input.label} </label>
+                  <div key={input.id} className="input-container">
                     <input
                       type={input.type}
                       id={input.id}
                       placeholder={input.placeholder}
-                      className='input'
+                      className="input-field"
                     />
+                    <label htmlFor="" className="input-label">
+                      {input.label}
+                    </label>
+                    <span class="input-highlight"></span>
                   </div>
                 );
               })}
@@ -70,4 +73,4 @@ const Newpage = ({ inputs, title }) => {
   );
 };
 
-export default Newpage;
+export default New;

@@ -6,10 +6,9 @@
   flex: 1;
   justify-content: space-between;
   @include box;
-  border: 3px double #1c6ea4;
-  border-radius: 7px 7px 7px 7px;
+  box-shadow: inset 0 0 1px;
 
-  .widget-left,
+  .widget-left, 
   .widget-right {
     display: flex;
     flex-direction: column;
@@ -22,9 +21,9 @@
     }
 
     .counter {
-      font-weight: $lfw;
+      font-weight: $afw;
       color: gray;
-      font-size: $lfs;
+      font-size: $afs;
       width: max-content;
     }
 

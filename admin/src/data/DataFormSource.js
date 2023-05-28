@@ -1,21 +1,21 @@
 export const userInputs = [
     {
       id: 1,
-      label: "Username",
+      label: "Firt Name",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "First Name",
     },
     {
       id: 2,
-      label: "Name and surname",
+      label: "Last Name",
       type: "text",
-      placeholder: "John Doe",
+      placeholder: "Last Name",
     },
     {
       id: 3,
       label: "Email",
       type: "mail",
-      placeholder: "john_doe@gmail.com",
+      placeholder: "Email Address",
     },
     {
       id: 4,
@@ -27,18 +27,19 @@ export const userInputs = [
       id: 5,
       label: "Password",
       type: "password",
+      placeholder: "Password",
     },
     {
       id: 6,
       label: "Address",
       type: "text",
-      placeholder: "Elton St. 216 NewYork",
+      placeholder: "Physical Address",
     },
     {
       id: 7,
       label: "Country",
       type: "text",
-      placeholder: "USA",
+      placeholder: "Country",
     },
   ];
   

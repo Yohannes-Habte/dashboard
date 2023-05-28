@@ -1,16 +1,17 @@
 import React from 'react';
-import Sidebar from '../../components/sidebar/Sidebar';
 import './Home.scss';
+import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import Widget from '../../components/widget/Widget';
-import FeaturedChart from '../../components/featureChart/FeaturedChart';
-import Chart from '../../components/chart/Chart';
-import TableReact from '../../components/table/Table';
+import FeaturedChart from '../../components/charts/featuredChart/FeaturedChart';
+import Chart from '../../components/charts/chart/Chart';
+import TableReact from '../../components/tables/table/Table';
 
 const Home = () => {
   return (
     <main className="home-page">
-      <Sidebar className="home-sidbar" />
+      <Sidebar />
+
       <section className="home-contianer">
         <Navbar />
 
@@ -23,15 +24,12 @@ const Home = () => {
 
         <div className="chats-container">
           <FeaturedChart />
-          <Chart aspect={2/1} title={"Last Six Months Revenue"} />
+          <Chart  />
         </div>
 
-        <article className='list-container'>
-          <h3 className='list-Title'> Latest Transactions </h3>
+        <article className='list-container'>  
           <TableReact />
         </article>
-
-
       </section>
     </main>
   );

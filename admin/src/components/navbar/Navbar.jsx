@@ -4,18 +4,18 @@ import { FaSearch } from 'react-icons/fa';
 import { MdLanguage, MdMessage } from 'react-icons/md';
 import { IoMdNotifications } from 'react-icons/io';
 import { VscColorMode } from 'react-icons/vsc';
-import { DarkContext } from '../../context/backgroundColor/DarkBgProvider';
-import { ACTION } from '../../context/backgroundColor/Reducer';
-
+import { BackgroundContext } from '../../context/background/BgProvider';
+import { BACKGROUND_ACTION } from '../../context/background/BgReducer';
 
 const Navbar = () => {
-  // Global state variable
-  const { dispatch } = useContext(DarkContext);
+  // Global variables
+  const { dispatch } = useContext(BackgroundContext);
 
-  // Change background color using toggle
-  const changeBackground = () => {
-    dispatch({ type: ACTION.TOGGLE });
+  // Change background color
+  const dynamicColor = () => {
+    dispatch({ type: BACKGROUND_ACTION.TOGGLE });
   };
+
   return (
     <nav className="navbar">
       <div className="wrapper">
@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
 
           <div className="item">
-            <VscColorMode className="navbar-icon" onClick={changeBackground} />
+            <VscColorMode className="navbar-icon" onClick={dynamicColor} />
           </div>
 
           <div className="item">
